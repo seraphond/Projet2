@@ -9,7 +9,7 @@
 
 function form_connect(){
 
-    echo'<nav id="form_connect"></nav>
+    echo'<nav id="form_connect">
             <form id="connect" method="POST">
              Utilisateur: <input type="text" name="utilisateur" required="required"><br>
              Mot de passe: <input type="password" name="MDP" required="required"><br>
