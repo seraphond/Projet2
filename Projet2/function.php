@@ -33,7 +33,7 @@ function form_inscription(){
 }
 
 
-function connect(){
+function connect(){ //requète Ok.
 
     try{
         $BDD= new PDO('pgsql:host=localhost;port=5432;dbname=sorgniard;user=sorgniard;password=3562Erw$');
@@ -45,7 +45,7 @@ function connect(){
 
 }
 
-function add_utilisateur($user,$pass){
+function add_utilisateur($user,$pass){ // La requète fonctionne mais les erreures sont mal gérée ex: le login existe déjà
     $BDD=connect();
     try{
         $requete=$BDD->prepare("INSERT INTO utilisateurs (login,pass) VALUES (:login,:pass)");
