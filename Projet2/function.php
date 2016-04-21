@@ -20,7 +20,7 @@ function form_connect(){
 }
 
 function form_inscription(){
-    echo'<nav id="form_inscription"></nav>
+    echo'<nav id="form_inscription">
             <form id="inscrip" method="POST" action="result.php">
              Utilisateur: <input type="text" name="utilisateur" required="required"><br>
              Mot de passe: <input type="password" name="MDP" required="required"><br>
