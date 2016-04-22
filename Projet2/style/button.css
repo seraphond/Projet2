@@ -50,3 +50,18 @@ a.stylebouton:hover {
     background-image: linear-gradient(to bottom, #DDDDDD, #F6F6F6);
 
 }
+
+.stylebouton2 {
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+}
+
+.stylebouton2:hover {
+  opacity: 0.8;
+  color: whitesmoke;
+}

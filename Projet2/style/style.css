@@ -1,8 +1,3 @@
 @import url("button.css");
 @import url("menu.css");
-
-/*Menu Style*/
-
-div#menu{
-    background-color: rgb(FF3333);
-}
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css");
