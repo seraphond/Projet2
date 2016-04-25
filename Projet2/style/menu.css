@@ -1,3 +1,4 @@
+
 /*Menu Style*/
 
 div#menu{
@@ -14,7 +15,6 @@ div#menu{
     padding: 0px 30px;
     align-items: center;
     justify-content: space-between;
-    font-family: Comic Sans MS;
 }
 
 div#user{
@@ -29,5 +29,4 @@ select{
     color: white;
     border: none;
     border-bottom: 1px solid;
-    font-family: Comic Sans MS;
 }

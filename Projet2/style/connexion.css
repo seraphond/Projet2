@@ -1,0 +1,14 @@
+div#connect{
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  background-color: #FF3333;
+  text-align: center;
+  color: white;
+}
+
+nav#form_connect{
+  margin-top: 50px;
+}
