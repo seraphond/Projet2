@@ -1,5 +1,5 @@
 /*Button Style*/
-a.stylebouton {
+/*a.stylebouton {
 
     -webkit-border-radius: 1px;
 
@@ -49,9 +49,9 @@ a.stylebouton:hover {
 
     background-image: linear-gradient(to bottom, #DDDDDD, #F6F6F6);
 
-}
+}*/
 
-.stylebouton2 {
+.stylebouton {
   color: white;
   border: 1px solid white;
   text-decoration: none;
@@ -61,7 +61,7 @@ a.stylebouton:hover {
   opacity: 1;
 }
 
-.stylebouton2:hover {
+.stylebouton:hover {
   opacity: 0.8;
   color: whitesmoke;
 }
