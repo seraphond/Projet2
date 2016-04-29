@@ -17,7 +17,13 @@ $mode=$_POST['mode'];
 //echo (' '.$usr.' : '.$pwd.' : '.$mode.'');
 
 if($mode ==1){
-   add_utilisateur($usr,$pwd,$descip);
+    try{
+        add_utilisateur($usr,$pwd,$descip);
+    }catch (Exception $e){
+        echo('Login déjà présent');
+    }
+
+
 }elseif ($mode==0){
     $verif=check_utilisateur($usr,$pwd);
     if($verif==1){
