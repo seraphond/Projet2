@@ -1,4 +1,33 @@
 /*Button Style*/
+
+.stylebouton {
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+}
+
+.stylebouton:hover {
+  opacity: 0.8;
+  color: whitesmoke;
+}
+
+button{
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1
+
+}
+
+
 /*a.stylebouton {
 
     -webkit-border-radius: 1px;
@@ -51,17 +80,3 @@ a.stylebouton:hover {
 
 }*/
 
-.stylebouton {
-  color: white;
-  border: 1px solid white;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 1;
-}
-
-.stylebouton:hover {
-  opacity: 0.8;
-  color: whitesmoke;
-}

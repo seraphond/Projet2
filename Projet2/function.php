@@ -34,6 +34,18 @@ function form_inscription(){
 
 }
 
+/*Create one event in a div*/
+function div_event($tab){
+    echo "<div class='event'>";
+
+    echo "<div class='like'><p>{$tab['like']}</p></div>";
+    echo "<div class='titre'><h3>{$tab['titre']}</h3></div>";
+    echo "<div class='description'><p>{$tab['description']}</p></div>";
+    echo "<div class='coord'><p>{$tab['longitude']}</p><p>{$tab['latitude']}</p></div>";
+
+    echo "</div>";
+}
+
 
 function connect(){ //requète Ok.
 
