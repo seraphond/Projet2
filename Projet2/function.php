@@ -51,6 +51,7 @@ function connect(){ //requète Ok.
 
     try{
         $BDD= new PDO('pgsql:host=localhost;port=5432;dbname=sorgniard;user=sorgniard;password=3562Erw$');
+        $BDD->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
     }catch (Exception $e){
         exit('<b>Catched exception at line '. $e->getLine() .' :</b> '. $e->getMessage());
     }
@@ -108,20 +109,20 @@ function create_event($longitude,$latitude,$titre,$date,$description){
     try{
 
         $BDD=connect();
-        $requete=$BDD->prepare("INSERT INTO evenement (longitude,latitude,titre,dateevent,descriptif,nb_like) VALUES (:long,:lat,:tit,:dat,:des,:like)");
+        $requete=$BDD->prepare("INSERT INTO evenement (longitude,latitude,titre,dateevent,descriptif,nb_like) VALUES (:long,:lat,:tit,:dat,:des,:lik)");
         $requete->bindParam(':long',$longitude,PDO::PARAM_STR);
         $requete->bindParam(':lat',$latitude,PDO::PARAM_STR);
         $requete->bindParam(':tit',$titre,PDO::PARAM_STR);
         $requete->bindParam(':dat',$date,PDO::PARAM_STR);
         $requete->bindParam(':des',$description,PDO::PARAM_STR);
-        $requete->bindParam(':like',$nb_like,PDO::PARAM_INT);
+        $requete->bindParam(':lik',$like,PDO::PARAM_INT);
         $requete->execute();
 
     }catch (Exception $e){
         exit('<b>Catched exception at line '. $e->getLine() .' :</b> '. $e->getMessage());
     }
 
-
+/*INSERT INTO evenement  VALUES ('20.00','10.00','bite','20-09-1992','ma bite sur ton front!',0);*/
 }
 
 function get_event($lat_min,$long_min,$lat_max,$long_max){

@@ -1,3 +1,34 @@
 Validation initiale:
 
 Seraphond : Formulaires de connexion et d'incription commnncé en PHP . Je travaille sur des des bugs sur les requète SQL.
+
+MAJ functions.php:
+
+requètes SQL :Ok.
+
+Type de retour  obtenu par get_event :
+
+Array
+(
+    [0] => Array
+        (
+            [latitude] => 20
+            [longitude] => 10
+            [titre] => bite
+            [dateevent] => 1992-09-20
+            [descriptif] => ma bite sur ton front!
+            [nb_like] => 0
+        )
+
+    [1] => Array
+        (
+            [latitude] => 22
+            [longitude] => 11
+            [titre] => truc
+            [dateevent] => 4492-01-25
+            [descriptif] => va chier
+            [nb_like] => 0
+        )
+
+)
+
