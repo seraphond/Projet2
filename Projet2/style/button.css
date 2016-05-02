@@ -10,10 +10,13 @@
   opacity: 1;
 }
 
-.stylebouton:hover {
+.stylebouton:hover{
   opacity: 0.8;
   color: whitesmoke;
+  cursor: pointer;
 }
+
+
 
 button{
   color: white;

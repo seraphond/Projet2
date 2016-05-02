@@ -23,10 +23,23 @@ div#user{
     border-radius: 10px;
 }
 
-select{
+div#interact{
+    border: 1px solid white;
+    padding : 5px 10px;
+    border-radius: 10px;
+    display: inline;
+    margin: 5px;
+    cursor: pointer;
+}
+
+a{
+    color: white;
+}
+
+/*select{
     border-radius: 1px;
     background-color: transparent;
     color: white;
     border: none;
     border-bottom: 1px solid;
-}
+}*/
