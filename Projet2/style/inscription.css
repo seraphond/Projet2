@@ -16,5 +16,10 @@ div#inscription>nav>form>textarea{
   border-style: dotted;
   border-color: #FF3333;
   border-radius: 5px;
-  
+  color : #FF3333;
+  text-align: center; 
+}
+
+div#inscription>nav>form>input{
+  color: #FF3333;
 }
