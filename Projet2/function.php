@@ -17,16 +17,17 @@ function form_connect(){
             <input type="hidden" name="mode" value="0"/>
              <button type="submit" class="submit">Se connecter</button>
             </form>
-            </nav>';
+            </nav>'; //A CHANGER CAR SUR LA MEME PAGE PAS SEPARER
 }
 
 function form_inscription(){
     echo'<nav id="form_inscription">
+            <h3>Formulaire d\'inscription</h3>
             <form id="inscrip" method="POST" action="result.php">
-             Utilisateur: <input type="text" name="utilisateur" required="required"><br>
-             Mot de passe: <input type="password" name="MDP" required="required"><br>
-             Description:<TEXTAREA name="description" rows=4 cols=40>Entez votre descrption</TEXTAREA>
-            <input type="hidden" name="mode" value="1"/>
+             Utilisateur: <input type="text" name="utilisateur" required="required"></br>
+             Mot de passe: <input type="password" name="MDP" required="required"></br></br>
+             Description:</br><TEXTAREA name="description" rows=4 cols=40>Entez votre descrption</TEXTAREA>
+            <input type="hidden" name="mode" value="1"/></form></br>
             <button type="submit" class="submit">Creer son compte</button>
             </form>
             </nav>';
