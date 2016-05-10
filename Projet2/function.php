@@ -185,12 +185,12 @@ function event2html($even){
 
         echo('<div id="event">
 	<div id="titre">
-		<h4>'.$even['titre'].'</h4>
+		'.$even['titre'].'
     </div>
-	<div id="like">'.$even['nb_like'].'</div>
+	<div id="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> '.$even['nb_like'].'</div>
 	<div id="date">'.$even['dateevent'].'</div>
-	<div id="longi">'.$even['longitude'].'</div>
-	<div id="lati">'.$even['longitude'].'</div>
+	<div id="longi">Longitude : '.$even['longitude'].'</div>
+	<div id="lati">Latitude : '.$even['longitude'].'</div>
 	<div id="descr">'.$even['descriptif'].'</div>
 </div>');
 }
