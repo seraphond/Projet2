@@ -25,7 +25,7 @@ function form_inscription(){
             <form id="inscrip" method="POST" action="result.php">
              Utilisateur: <input type="text" name="utilisateur" required="required"><br>
              Mot de passe: <input type="password" name="MDP" required="required"><br>
-             Description:<TEXTAREA name="description" rows=4 cols=40>Entez votre descrption</TEXTAREA>
+             Description:<TEXTAREA name="description" rows=4 cols=40>Entrez votre description</TEXTAREA>
             <input type="hidden" name="mode" value="1"/>
             <button type="submit" class="submit">Creer son compte</button>
             </form>
