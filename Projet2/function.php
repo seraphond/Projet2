@@ -8,6 +8,46 @@
 
 session_start();
 
+
+function menu(){
+    echo('<div id="menu">
+	<div id="date"><i class="fa fa-clock-o" aria-hidden="true"></i>'.date().'</div>
+	<div id="title">Projet 2</div>
+	<div id="user">
+	<i class="fa fa-user" aria-hidden="true"></i>
+		<div id="interact" class="stylebouton">
+			<i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
+		</div>
+		<div id="co">
+			<form>
+				<label for="login" >Login :</label><input type="text" name="login" required="requireded"/>
+				<label for="mdp"> Mot de passe :</label><input type="password" name="mdp" required="required"/>
+				<p></p>
+				<button type="submit">Valider</button>
+			</form>
+		</div>
+		<div id="interact" class="stylebouton">
+			<a href="">
+			<i class="fa fa-user-plus" aria-hidden="true"></i> Inscription
+			</a>
+		</div>
+	</div>
+	
+</div>
+<div id="inscription">
+<nav id="form_inscription">
+			<h3>Formulaire d\'inscription</h3>
+            <form id="inscrip" method="POST" action="result.php">
+             Utilisateur: <input type="text" name="utilisateur" required="required"></br>
+             Mot de passe: <input type="password" name="MDP" required="required"></br></br>
+             Description:</br><TEXTAREA name="description" rows=4 cols=40>Entez votre description</TEXTAREA>
+            <input type="hidden" name="mode" value="1"/></form></br>
+            <button type="submit" class="submit">Creer son compte</button>
+            </form>
+            </nav>
+</div>
+');
+}
 function form_connect(){
 
     echo'<nav id="form_connect">
@@ -136,4 +176,21 @@ function get_event($lat_min,$long_min,$lat_max,$long_max){
     }catch (Exception $e){
         exit('<b>Catched exception at line '. $e->getLine() .' :</b> '. $e->getMessage());
     }
+}
+/*
+
+ */
+
+function event2html($even){
+
+        echo('<div id="event">
+	<div id="titre">
+		<h4>'.$even['titre'].'</h4>
+    </div>
+	<div id="like">'.$even['nb_like'].'</div>
+	<div id="date">'.$even['dateevent'].'</div>
+	<div id="longi">'.$even['longitude'].'</div>
+	<div id="lati">'.$even['longitude'].'</div>
+	<div id="descr">'.$even['descriptif'].'</div>
+</div>');
 }
