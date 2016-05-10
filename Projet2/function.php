@@ -6,74 +6,30 @@
  * Time: 14:01
  */
 
-session_start();
 
 
-function menu(){
-    echo('<div id="menu">
-	<div id="date"><i class="fa fa-clock-o" aria-hidden="true"></i>'.date().'</div>
-	<div id="title">Projet 2</div>
-	<div id="user">
-	<i class="fa fa-user" aria-hidden="true"></i>
-		<div id="interact" class="stylebouton">
-			<i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
-		</div>
-		<div id="co">
-			<form>
-				<label for="login" >Login :</label><input type="text" name="login" required="requireded"/>
-				<label for="mdp"> Mot de passe :</label><input type="password" name="mdp" required="required"/>
-				<p></p>
-				<button type="submit">Valider</button>
-			</form>
-		</div>
-		<div id="interact" class="stylebouton">
-			<a href="">
-			<i class="fa fa-user-plus" aria-hidden="true"></i> Inscription
-			</a>
-		</div>
-	</div>
-	
-</div>
-<div id="inscription">
-<nav id="form_inscription">
-			<h3>Formulaire d\'inscription</h3>
-            <form id="inscrip" method="POST" action="result.php">
-             Utilisateur: <input type="text" name="utilisateur" required="required"></br>
-             Mot de passe: <input type="password" name="MDP" required="required"></br></br>
-             Description:</br><TEXTAREA name="description" rows=4 cols=40>Entez votre description</TEXTAREA>
-            <input type="hidden" name="mode" value="1"/></form></br>
-            <button type="submit" class="submit">Creer son compte</button>
-            </form>
-            </nav>
-</div>
-');
-}
-function form_connect(){
+function print_header(){
+    echo('<!DOCTYPE html>
+            <html lang="fr">
 
-    echo'<nav id="form_connect">
-            <form id="connect" method="POST" action="result.php">
-             Utilisateur: <input type="text" name="utilisateur" required="required"><br>
-             Mot de passe: <input type="password" name="MDP" required="required"><br>
-            <input type="hidden" name="mode" value="0"/>
-             <button type="submit" class="submit">Se connecter</button>
-            </form>
-            </nav>'; //A CHANGER CAR SUR LA MEME PAGE PAS SEPARER
-}
+            <head>
+    <meta charset="utf-8">
+    <title>Projet 2</title>
 
-function form_inscription(){
-    echo'<nav id="form_inscription">
-            <h3>Formulaire d\'inscription</h3>
-            <form id="inscrip" method="POST" action="result.php">
-             Utilisateur: <input type="text" name="utilisateur" required="required"></br>
-             Mot de passe: <input type="password" name="MDP" required="required"></br></br>
-             Description:</br><TEXTAREA name="description" rows=4 cols=40>Entez votre description</TEXTAREA>
-            <input type="hidden" name="mode" value="1"/></form></br>
-            <button type="submit" class="submit">Creer son compte</button>
-            </form>
-            </nav>';
-    
+    <link rel="stylesheet" media="screen" href="style/style.css"/>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="javascript/scriptCarte.js"></script>
+    <script src="javascript/scriptCo.js"></script>
+    </head>
+
+     <body>');
 
 }
+
+
+
+
+
 
 /*Create one event in a div*/
 function div_event($tab){
@@ -193,4 +149,51 @@ function event2html($even){
 	<div id="lati">Latitude : '.$even['longitude'].'</div>
 	<div id="descr">'.$even['descriptif'].'</div>
 </div>');
+}
+
+function print_menu(){
+    echo ('<div id="menu">
+            <div id="date"><i class="fa fa-clock-o" aria-hidden="true"></i>');
+    setlocale (LC_TIME, 'fr_FR.utf8','fra');
+    echo (strftime("%A %d %B %Y %R"));
+    echo('</div>
+            <div id="title">Projet 2</div>
+            <div id="index" class="stylebouton">
+            <a href="index.php">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Accueil
+        </a>
+    </div>
+            <div id="user">
+             <i class="fa fa-user" aria-hidden="true"></i>');
+    if ($_SESSION['connected']==true){
+        echo('<div id="interact" class="stylebouton">
+                    <a href="result.php">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> Déconnexion
+                    
+                        </div>');
+
+    }else{
+        echo('<div id="interact" class="stylebouton">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
+        </div>');
+    }
+
+    
+   echo('<div id="co">
+        <form method="POST" action="index.php">
+            <label for="login" >Login :</label><input type="text" name="login" required="required"/><br/>
+            <label for="mdp"> Mot de passe :</label><input type="password" name="mdp" required="required"/>
+            <input type="hidden" name="mode" value="connection"/><br/>
+            <p></p>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+    <div id="interact" class="stylebouton">
+        <a href="inscription.php">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Inscription
+        </a>
+              </div>
+            </div>
+
+        </div>');
 }
