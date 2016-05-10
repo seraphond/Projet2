@@ -1,9 +1,13 @@
 div#events{
-  margin-left: 3vw;
+  margin-left: 1.5vw;
+  border-left-style: dotted;
+  border-left-color: grey;
+  padding-left: 1.5vw;
 }
 
 div#event{
-  border-color : lightgray;
+  background-color: whitesmoke;
+  border-color : #FF3353;
   border-style: solid;
   position: relative;
   border-width: 2px;
@@ -15,7 +19,7 @@ div#event>div{
   color : white;
   border-radius: 5px;
   position: absolute;
-  background-color: navy;
+  background-color: #FF3333;
   padding: 3px;
 }
 
@@ -48,4 +52,33 @@ div#event>div{
 #longi{
   bottom: 2px;
   right: 15%
+}
+
+/*TEST*/
+div#moved{
+  display: none;
+  position: absolute;
+  opacity: 0.9;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 40vh;
+  padding-left: 30vw;
+  z-index: 1;
+  background-color: grey;
+}
+
+div#moved>div#event{
+  height: 200px; 
+}
+
+div#moved>div#event>div#descr{
+  display: inline;
+  top: 50px;
+  left: 320px;
+}
+
+div#moved>div#event>div#like{
+  top: 85px;
 }
