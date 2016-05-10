@@ -31,7 +31,7 @@ echo('<!DOCTYPE html>
   <meta charset=\'utf-8\'>
   <title>test acceuil</title>
 
-  <link rel="stylesheet" media="screen" href="../style/style.css"/>
+  <link rel="stylesheet" media="screen" href="style/style.css"/>
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <script src="../javascript/scriptCarte.js"></script>
 </head>
