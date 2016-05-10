@@ -1,0 +1,51 @@
+div#events{
+  margin-left: 3vw;
+}
+
+div#event{
+  border-color : lightgray;
+  border-style: solid;
+  position: relative;
+  border-width: 2px;
+  width : 45vw;
+  height: 100px;
+}
+
+div#event>div{
+  color : white;
+  border-radius: 5px;
+  position: absolute;
+  background-color: navy;
+  padding: 3px;
+}
+
+#date{
+  top: 10px;
+  right: 10px;
+}
+
+#titre{
+  left: 75px;
+  top: 2px;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+#like{
+  top: 45px;
+  left: 3px;
+}
+
+#descr{
+  display: none;
+}
+
+#lati{
+  bottom: 2px;
+  left: 40%;
+}
+
+#longi{
+  bottom: 2px;
+  right: 15%
+}
