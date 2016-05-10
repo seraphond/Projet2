@@ -14,7 +14,14 @@ div#co{
 }
 
 input{
+  width: 150px;
+  color: #FF3333;
   border-radius: 10px;
   border: none;
   padding: 0px 5px;
 }
+
+input:invalid{
+  box-shadow:0 0 5px rgba(255, 255, 255, .9);
+}
+

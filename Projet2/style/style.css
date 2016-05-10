@@ -1,6 +1,7 @@
 @import url("button.css");
 @import url("inscription.css");
 @import url("menu.css");
+@import url("event.css");
 @import url("connexion.css");
 @import url("carte.css");
 @import url("http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css");
@@ -11,4 +12,9 @@
 *{
   font-family: Comic Sans MS,Comic cursive;
   /*background-color: blue;*/
+}
+
+div#main{
+  display: flex;
+  margin-top: 55px;
 }
