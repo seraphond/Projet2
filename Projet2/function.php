@@ -156,14 +156,14 @@ function event2html($even){
 
 function print_menu(){
     echo ('<div id="menu">
-            <div id="date"><i class="fa fa-clock-o" aria-hidden="true"></i>');
+            <div id="date"><i class="fa fa-clock-o" aria-hidden="true"></i> ');
     setlocale (LC_TIME, 'fr_FR.utf8','fra');
     echo (strftime("%A %d %B %Y %R"));
     echo('</div>
             <div id="title">Projet 2</div>
             <div id="index" class="stylebouton">
             <a href="index.php">
-            <i class="fa fa-user-plus" aria-hidden="true"></i> Accueil
+            <i class="fa fa-home" aria-hidden="true"></i> Accueil
         </a>
     </div>');
     if($_SESSION['connected'] ==true){
