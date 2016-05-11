@@ -5,6 +5,10 @@ $usr=$_POST['login'];
 $pwd=$_POST['mdp'];
 $mode=$_POST['mode'];
 $descip=$_POST['description'];
+$longitude=$_POST['longitude'];
+$latitude=$_POST['latitude'];
+$titre=$_POST['titre'];
+$date=$_POST['date'];
 
 if($mode =="inscription") {
     try {
@@ -22,6 +26,13 @@ if($mode =="inscription") {
         $_SESSION['connected']=true;
         $_SESSION['login']=$usr;
         $message="Bienvenue ".$usr." .";
+    }
+}elseif ($mode=="creation"){
+    try{
+        create_event($longitude,$latitude,$titre,$date,$descip,$usr);
+        $message="l'évent est bien creé";
+    } catch (Exception $e) {
+        $message="nope  il existe déjà";
     }
 }
     
@@ -61,11 +72,11 @@ print_menu();
 <pre>Post :<?php print_r($_POST);?></pre>
 <pre>Session:<?php print_r($_SESSION);?></pre>
 <!---<pre><?php print_r($verif);?></pre> --->
-<?php echo($message);?>
+
 
 */
 
 ?>
 </body>
-
+<?php echo($message);?>
 </html>

@@ -95,23 +95,26 @@ longitude float NOT NULL,
 titre varchar(40) NOT NULL,
 dateevent date NOT NULL,
 descrptif varchar(1500),
+auteur varchar(50) NOT NULL,
 nb_like int,
+FOREIGN KEY (auteur) REFERENCES utilisateurs(login),
 PRIMARY KEY (latitude,longitude,titre,dateevent)
 
 );
  */
 
-function create_event($longitude,$latitude,$titre,$date,$description){
+function create_event($longitude,$latitude,$titre,$date,$description,$auteur){
     $like=0;
     try{
 
         $BDD=connect();
-        $requete=$BDD->prepare("INSERT INTO evenement (longitude,latitude,titre,dateevent,descriptif,nb_like) VALUES (:long,:lat,:tit,:dat,:des,:lik)");
+        $requete=$BDD->prepare("INSERT INTO evenement (longitude,latitude,titre,dateevent,descriptif,auteur,nb_like) VALUES (:long,:lat,:tit,:dat,:des,:aut,:lik)");
         $requete->bindParam(':long',$longitude,PDO::PARAM_STR);
         $requete->bindParam(':lat',$latitude,PDO::PARAM_STR);
         $requete->bindParam(':tit',$titre,PDO::PARAM_STR);
         $requete->bindParam(':dat',$date,PDO::PARAM_STR);
         $requete->bindParam(':des',$description,PDO::PARAM_STR);
+        $requete->bindParam(':aut',$auteur,PDO::PARAM_STR);
         $requete->bindParam(':lik',$like,PDO::PARAM_INT);
         $requete->execute();
 
@@ -162,15 +165,22 @@ function print_menu(){
             <a href="index.php">
             <i class="fa fa-user-plus" aria-hidden="true"></i> Accueil
         </a>
-    </div>
-            <div id="user">
+    </div>');
+    if($_SESSION['connected'] ==true){
+        echo('<div id="create_link" class="stylebouton">
+            <a href="event_create.php">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Creer un event
+              </a>
+    </div>');
+    }
+          echo('<div id="user">
              <i class="fa fa-user" aria-hidden="true"></i>');
     if ($_SESSION['connected']==true){
         echo('<div id="interact" class="stylebouton">
                     <a href="result.php">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> Déconnexion
                     
-                        </div>');
+                        </a></div>');
 
     }else{
         echo('<div id="interact" class="stylebouton">
