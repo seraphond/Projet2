@@ -105,7 +105,7 @@ PRIMARY KEY (latitude,longitude,titre,dateevent)
 
 function create_event($longitude,$latitude,$titre,$date,$description,$auteur){
     $like=0;
-    try{
+
 
         $BDD=connect();
         $requete=$BDD->prepare("INSERT INTO evenement (longitude,latitude,titre,dateevent,descriptif,auteur,nb_like) VALUES (:long,:lat,:tit,:dat,:des,:aut,:lik)");
@@ -117,10 +117,6 @@ function create_event($longitude,$latitude,$titre,$date,$description,$auteur){
         $requete->bindParam(':aut',$auteur,PDO::PARAM_STR);
         $requete->bindParam(':lik',$like,PDO::PARAM_INT);
         $requete->execute();
-
-    }catch (Exception $e){
-        exit('<b>Catched exception at line '. $e->getLine() .' :</b> '. $e->getMessage());
-    }
 
 /*INSERT INTO evenement  VALUES ('20.00','10.00','bite','20-09-1992','ma bite sur ton front!',0);*/
 }

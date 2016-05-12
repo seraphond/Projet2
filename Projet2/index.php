@@ -30,9 +30,9 @@ if($mode =="inscription") {
 }elseif ($mode=="creation"){
     try{
         create_event($longitude,$latitude,$titre,$date,$descip,$usr);
-        $message="l'évent est bien creé";
+        $message="l'évenement est bien creé";
     } catch (Exception $e) {
-        $message="nope  il existe déjà";
+        $message="l'évenement existe déjà";
     }
 }
     
@@ -48,7 +48,7 @@ print_menu();
     <select>
         <option value="" disabled selected>Ordonner</option>
         <option value="date">Date</option>
-        <option value="auteur"><i class="fa fa-users" aria-hidden="true"></i> Auteur</option>
+        <option value="auteur"><!--<i class="fa fa-users" aria-hidden="true"></i>--> Auteur</option>
     </select>
     <div id="event">
         <div id="titre">Le titre</div>
@@ -78,5 +78,5 @@ print_menu();
 
 ?>
 </body>
-<?php echo($message);?>
+<?php echo('<p>'.$message.'</p>');?>
 </html>
