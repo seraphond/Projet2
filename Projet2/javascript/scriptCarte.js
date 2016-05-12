@@ -7,7 +7,7 @@ function dessinerCarte(){
     map = L.map('carte');
     //map.on('load',updateBounds);
     //map.on('moveend',updateBounds);
-    //map.on('click',updateClick);
+    map.on('click',updateForm);
     map.setView([45, 3.1416], 5);
     placerMarqueurs(map);
   
@@ -42,4 +42,9 @@ function placerMarqueurs(map) {
         // insertion du marqueur selon les coordonnées trouvées dans les attributs data-lat et data-lon :
         L.marker([l[i].dataset.lat, l[i].dataset.lon]).addTo(map).bindPopup(texte);      
    }
+}
+
+function updateForm(ev){
+    document.getElementById('latitude').textContent = ev.latlng.lat.toFixed(5);
+    document.getElementById('longitude').textContent = ev.latlng.lng.toFixed(5);
 }
