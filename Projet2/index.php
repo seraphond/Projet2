@@ -53,20 +53,22 @@ print_menu();
         <option value="date">Date</option>
         <option value="auteur"><!--<i class="fa fa-users" aria-hidden="true"></i>--> Auteur</option>
     </select>
-    <div id="event">
+    <div id="event" data-lon="24.5" data-lat="56.8">
         <div id="titre">Le titre</div>
-        <div id="like">95</div>
+        <div id="like"><i class="fa fa-thumbs-o-up"></i> 95</div>
         <div id="date">24/05/2018</div>
-        <div id="longi" data-lon="24.5">24.5</div>
-        <div id="lati" data-lat="56.8">56.8</div>
+        <div id="auteur">bla</div>
+        <div id="longi" >24.5</div>
+        <div id="lati" >56.8</div>
         <div id="descr">Je suis une description de ouf !</div>
     </div>
-    <div id="event">
+    <div id="event" data-lat="56.8" data-lon="05.5">
         <div id="titre">Le titre</div>
-        <div id="like">95</div>
+        <div id="like"><i class="fa fa-thumbs-o-up"></i> 95</div>
         <div id="date">24/05/2018</div>
-        <div id="longi" data-lon="554646805">5546468.5</div>
-        <div id="lati"data-lat="56.8">56.8</div>
+        <div id="auteur">bla</div>
+        <div id="longi">5546468.5</div>
+        <div id="lati" >56.8</div>
         <div id="descr">Je suis une description de ouf !</div>
     </div>
 </div>

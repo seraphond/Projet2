@@ -29,10 +29,15 @@ div#event>div{
 }
 
 #titre{
-  left: 75px;
+  left: 120px;
   top: 2px;
   font-size: 25px;
   text-decoration: underline;
+}
+
+#auteur{
+  top:2px;
+  left:2px;
 }
 
 #like{

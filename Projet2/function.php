@@ -139,15 +139,17 @@ function get_event($lat_min,$long_min,$lat_max,$long_max){
 
 function event2html($even){
 
-        echo('<div id="event">
+        echo('<div id="event" data-lon="'.$even['longitude'].'" dat-lat="'.$even['latitude'].'">
 	<div id="titre">
 		'.$even['titre'].'
     </div>
 	<div id="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> '.$even['nb_like'].'</div>
 	<div id="date">'.$even['dateevent'].'</div>
-	<div id="longi" data-lon="'.$even['longitude'].'">Longitude : '.$even['longitude'].'</div>
-	<div id="lati" dat-lat="'.$even['latitude'].'">Latitude : '.$even['latitude'].'</div>
+	<div id="auteur" >'.$even['auteur'].'</div>
+	<div id="longi">Longitude : '.$even['longitude'].'</div>
+	<div id="lati">Latitude : '.$even['latitude'].'</div>
 	<div id="descr">'.$even['descriptif'].'</div>
+	
 </div>');
 }
 
