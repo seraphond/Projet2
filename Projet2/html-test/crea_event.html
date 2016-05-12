@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Crée un événement</title>
+
+    <link rel="stylesheet" media="screen" href="../style/style.css"/>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="../javascript/scriptCarte.js"></script>
+    <script src="../javascript/scriptCo.js"></script>
+</head>
+
+<body>
+<div id="menu">
+    <div id="date"><i class="fa fa-clock-o" aria-hidden="true"></i> DATE</div>
+    <div id="title">Projet 2</div>
+    <div id="user">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <div id="interact" class="stylebouton">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
+        </div>
+        <div id='co'>
+            <form>
+                <label for="login" >Login :</label><input type="text" name="login" required="requireded"/>
+                <label for="mdp"> Mot de passe :</label><input type="password" name="mdp" required="required"/>
+                <p></p>
+                <button type="submit">Valider</button>
+            </form>
+        </div>
+        <div id="interact" class="stylebouton">
+            <a href="">
+                <i class="fa fa-user-plus" aria-hidden="true"></i> Inscription
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="creation_event">
+    <nav id="form_">
+        <h3>Créer un événement</h3>
+        <form id="inscrip" method="POST" action="result.php">
+            Titre: <input type="text" name="titre" required="required"></br>
+            Date: <input type="text" name="date" required="required"></br></br>
+            Longitude: <input type="text" name="long" required="required"></br></br>
+            Latitude: <input type="text" name="lat" required="required"></br></br>
+            Description:</br><TEXTAREA name="description" rows=4 cols=40>Entrez les faits de l'événement</TEXTAREA>
+            <input type="hidden" name="mode" value="1"/></form></br>
+        <button type="submit" class="submit">Créer un événement !</button>
+        </form>
+    </nav>
+</div>
+
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 <?php
+session_start();
    include ('function.php');
 
 $usr=$_POST['login'];
@@ -22,7 +23,7 @@ if($mode =="inscription") {
         $message="Utilisateur inconnu ou mot de passe incorrect";
     }
     if($verif==0){
-        session_start();
+
         $_SESSION['connected']=true;
         $_SESSION['login']=$usr;
         $message="Bienvenue ".$usr." .";
@@ -45,6 +46,7 @@ print_menu();
 <div id="carte"></div>
 
 <div id="events">
+    <div id="moved"></div>
    <!--<p>Yolo de thomas</p><p>date, titre, nom de l\'auteur</p>-->
     <select>
         <option value="" disabled selected>Ordonner</option>
@@ -55,28 +57,28 @@ print_menu();
         <div id="titre">Le titre</div>
         <div id="like">95</div>
         <div id="date">24/05/2018</div>
-        <div id="longi">24.5</div>
-        <div id="lati">56.8</div>
+        <div id="longi" data-lon="24.5">24.5</div>
+        <div id="lati" data-lat="56.8">56.8</div>
         <div id="descr">Je suis une description de ouf !</div>
     </div>
     <div id="event">
         <div id="titre">Le titre</div>
         <div id="like">95</div>
         <div id="date">24/05/2018</div>
-        <div id="longi">5546468.5</div>
-        <div id="lati">56.8</div>
+        <div id="longi" data-lon="554646805">5546468.5</div>
+        <div id="lati"data-lat="56.8">56.8</div>
         <div id="descr">Je suis une description de ouf !</div>
     </div>
 </div>
 </div>
 <?php
-/*
-<pre>Post :<?php print_r($_POST);?></pre>
-<pre>Session:<?php print_r($_SESSION);?></pre>
-<!---<pre><?php print_r($verif);?></pre> --->
+
+//<pre>Post :<?php print_r($_POST);</pre>
+echo('<pre>Session:'.print_r($_SESSION).'</pre>');
+//<!---<pre><?php print_r($verif);</pre> --->
 
 
-*/
+
 
 ?>
 </body>

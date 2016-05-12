@@ -10,7 +10,7 @@
 
 function print_header(){
     echo('<!DOCTYPE html>
-            <html lang="fr">
+            <html lang="fr" xmlns="http://www.w3.org/1999/html">
 
             <head>
     <meta charset="utf-8">
@@ -20,6 +20,7 @@ function print_header(){
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script src="javascript/scriptCarte.js"></script>
     <script src="javascript/scriptCo.js"></script>
+    <script src="javascript/scriptZoom.js"></script>
     </head>
 
      <body>');
@@ -144,8 +145,8 @@ function event2html($even){
     </div>
 	<div id="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> '.$even['nb_like'].'</div>
 	<div id="date">'.$even['dateevent'].'</div>
-	<div id="longi">Longitude : '.$even['longitude'].'</div>
-	<div id="lati">Latitude : '.$even['longitude'].'</div>
+	<div id="longi" data-lon="'.$even['longitude'].'">Longitude : '.$even['longitude'].'</div>
+	<div id="lati" dat-lat="'.$even['latitude'].'">Latitude : '.$even['latitude'].'</div>
 	<div id="descr">'.$even['descriptif'].'</div>
 </div>');
 }
@@ -162,13 +163,7 @@ function print_menu(){
             <i class="fa fa-home" aria-hidden="true"></i> Accueil
         </a>
     </div>');
-    if($_SESSION['connected'] ==true){
-        echo('<div id="create_link" class="stylebouton">
-            <a href="event_create.php">
-            <i class="fa fa-user-plus" aria-hidden="true"></i> Creer un event
-              </a>
-    </div>');
-    }
+   
           echo('<div id="user">
              <i class="fa fa-user" aria-hidden="true"></i>');
     if ($_SESSION['connected']==true){
@@ -176,12 +171,23 @@ function print_menu(){
                     <a href="result.php">
                     <i class="fa fa-sign-in" aria-hidden="true"></i> Déconnexion
                     
-                        </a></div>');
+                        </a></div>
+                        
+            <div id="interact" class="stylebouton">
+            <a href="event_create.php">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Creer un event
+              </a>
+    </div>');
 
     }else{
         echo('<div id="interact" class="stylebouton">
             <i class="fa fa-sign-in" aria-hidden="true"></i> Connexion
-        </div>');
+        </div>
+            <div id="interact" class="stylebouton">
+        <a href="inscription.php">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Inscription
+        </a>
+              </div>');
     }
 
     
@@ -194,11 +200,7 @@ function print_menu(){
             <button type="submit">Valider</button>
         </form>
     </div>
-    <div id="interact" class="stylebouton">
-        <a href="inscription.php">
-            <i class="fa fa-user-plus" aria-hidden="true"></i> Inscription
-        </a>
-              </div>
+    
             </div>
 
         </div>');
