@@ -4,9 +4,6 @@
   /*taille de la map*/
   width: 45vw;
   height: 99vh;
-  float: left;
-  z-index: 1;
-  top: 7vh;
-  right: 1vw;
+
 }
 

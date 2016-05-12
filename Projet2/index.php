@@ -41,6 +41,7 @@ print_header();
 print_menu();
 
 ?>
+<div id="main">
 <div id="carte"></div>
 
 <div id="events">
@@ -66,6 +67,7 @@ print_menu();
         <div id="lati">56.8</div>
         <div id="descr">Je suis une description de ouf !</div>
     </div>
+</div>
 </div>
 <?php
 /*
